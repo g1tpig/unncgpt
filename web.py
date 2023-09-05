@@ -2,12 +2,10 @@ import openai
 import streamlit as st
 import vectorSearch
 from datetime import date
-import pip
-
-st.balloons()
-pip.main(['install','-r', 'requirements.txt'])
 
 st.title("Nottingham GPT")
+
+st.balloons()
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
