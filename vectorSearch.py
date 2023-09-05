@@ -67,10 +67,8 @@ def getReference(question):
         output_fields = ["content"],
     )
     
-    reference = ""
-    for i, row in enumerate(rows_of_ids):
-        content_of_row = row['content']
-        reference.join(f"({i}){content_of_row}\n")
+    reference = "\n".join([f"({i}){row['content']}" for i, row in enumerate(rows_of_ids)])
+
 
     return reference
 
