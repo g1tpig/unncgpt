@@ -3,5 +3,5 @@ streamlit
 pymilvus==2.2.11
 sentence-transformers
 numpy
-textrank4zh==0.3
+textrank4zh==1.9。1
 
