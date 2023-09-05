@@ -4,7 +4,7 @@ from Search import SearchEngine
 import numpy as np
 from keywordLLM import KeywordExtractor
 
-TOPK = 5
+TOPK = 15
 
 
 def combineVectors(k_norm, s_norm, alpha):
