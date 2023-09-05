@@ -25,4 +25,4 @@ class KeywordExtractor:
     def HanLP(self, text):
         HanLP = HanLPClient('https://www.hanlp.com/api', auth=None, language='zh') # auth不填则匿名，zh中文，mul多语种
         result = HanLP.keyphrase_extraction(text=text, topk=10)
-        return result.keys
+        return result.keys()
