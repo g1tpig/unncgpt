@@ -1,1 +1,6 @@
 openai
+streamlit
+pymilvus==2.2.11
+sentence-transformers
+numpy
+textrank4zh
