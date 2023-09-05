@@ -4,3 +4,4 @@ pymilvus==2.2.11
 sentence-transformers
 numpy
 hanlp_restful
+textrank4zh
