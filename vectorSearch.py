@@ -4,7 +4,7 @@ from Search import SearchEngine
 import numpy as np
 from keywordLLM import KeywordExtractor
 
-TOPK = 15
+TOPK = 5
 
 
 def combineVectors(k_norm, s_norm, alpha):
@@ -50,7 +50,7 @@ def getReference(question):
     num_of_rows = search_engine.NumberOfRows()
 
     score_dict = {row_id: 0 for row_id in range(1, num_of_rows + 1)}
-    search_list = search_engine.bulkSearch(query=combined_embeddings, limit=10)
+    search_list = search_engine.bulkSearch(query=combined_embeddings, limit=50)
 
     for sublist in search_list:
         for item in sublist:
