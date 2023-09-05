@@ -29,7 +29,7 @@ def getReference(question):
 
     # 生成关键词
     kwd_extractor = KeywordExtractor()
-    keywords = (kwd_extractor.TR4W(question))
+    keywords = (kwd_extractor.HanLP(question))
     print(keywords)
 
     # 过滤停用词、介词...

@@ -1,6 +1,6 @@
 from imp import reload
 import sys
-import codecs
+from hanlp_restful import HanLPClient
 from textrank4zh import TextRank4Keyword, TextRank4Sentence
 
 class KeywordExtractor:
@@ -21,3 +21,8 @@ class KeywordExtractor:
             keywords.add(item.word)
 
         return list(keywords)
+    
+    def HanLP(self, text):
+        HanLP = HanLPClient('https://www.hanlp.com/api', auth=None, language='mul') # auth不填则匿名，zh中文，mul多语种
+        result = HanLP.keyphrase_extraction(text=text, topk=10)
+        return result
