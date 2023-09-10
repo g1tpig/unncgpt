@@ -49,12 +49,15 @@ def getReference(question):
     search_engine = SearchEngine()
     num_of_rows = search_engine.NumberOfRows()
 
-    score_dict = {row_id: 0 for row_id in range(1, num_of_rows + 1)}
+    score_dict = {}
     search_list = search_engine.bulkSearch(query=combined_embeddings, limit=50)
 
     for sublist in search_list:
         for item in sublist:
-            score_dict[item['id']] += item['distance']
+            if item['id'] in score_dict:
+                score_dict[item['id']] += item['distance']
+            else:
+                score_dict[item['id']] = item['distance']
 
     # 取前topk条数据输出
     sorted_list = sorted(score_dict.items(), key=lambda x: x[1], reverse=True)
