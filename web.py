@@ -3,23 +3,6 @@ import streamlit as st
 import vectorSearch
 from datetime import date
 
-bg_css = """  
-<style>
-.stApp {
-  background-image: url('https://images.unsplash.com/photo-1630438325568-69fc918b27cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3131&q=80');
-  height: 50%;
-  position: absolute;
-  top: 0;
-  left: 0; 
-  backdrop-filter: blur(5px) opacity(0.5); 
-  background-attachment: fixed;
-  background-position: center;
-}
-</style>
-"""
-
-st.markdown(bg_css, unsafe_allow_html=True)
-
 st.title("Nottingham GPT")
 
 st.balloons()
