@@ -11,7 +11,7 @@ bg_css = """
   position: absolute;
   top: 0;
   left: 0; 
-  filter: blur(5px) opacity(0.5); 
+  backdrop-filter: blur(5px) opacity(0.5); 
   background-attachment: fixed;
   background-position: center;
 }
