@@ -14,9 +14,7 @@ if "openai_model" not in st.session_state:
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    with st.chat_message("assistant"):
-        welcome_message = "Hi! Welcome to UNNC🥰"
-        st.markdown(welcome_message)
+    welcome_message = "Hi! Welcome to UNNC🥰"
     st.session_state.messages.append({"role":"assistant", "content": welcome_message})
 
 for message in st.session_state.messages:
