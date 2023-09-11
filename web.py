@@ -13,17 +13,13 @@ if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
 if "messages" not in st.session_state:
-    st.session_state.messages = []
-    welcome_message = "Hi! Welcome to UNNC🥰"
-    st.session_state.messages.append({"role":"assistant", "content": welcome_message})
+    st.session_state.messages = [{"role": "assistant", "content": "Hi! Welcome to Nottingham🥰"}]
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-print(st.session_state.messages)
-
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
