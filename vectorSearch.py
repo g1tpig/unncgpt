@@ -50,7 +50,7 @@ def getReference(question):
     num_of_rows = search_engine.NumberOfRows()
 
     score_dict = {}
-    search_list = search_engine.bulkSearch(query=combined_embeddings, limit=50)
+    search_list = search_engine.bulkSearch(query=combined_embeddings, limit=500)
 
     for sublist in search_list:
         for item in sublist:
