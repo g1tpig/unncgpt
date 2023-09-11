@@ -15,16 +15,15 @@ if "openai_model" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Hi! Welcome to Nottingham🥰"}]
 
+if prompt := st.chat_input("what's up?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input():
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
-
-    with st.chat_message("assistant"):
+if st.session_state.messages[-1]["role"] != "assistant":
+    with st.chat_message("assistant"):          
         message_placeholder = st.empty()
         full_response = ""
 
