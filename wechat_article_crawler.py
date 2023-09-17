@@ -4,6 +4,10 @@ from time import sleep
 from bs4 import BeautifulSoup
 import json
 
+# 自动化思路：建立号码池和数据库，启动时遍历数据库所有公众号（耗费【150+50x天数】个爬取次数），
+# 每次访问都随机选择一个号码（每个号码需要爬取至少【200/号码数】个页面），
+# 每个页面至少需要花费时间【120/号码数】秒，遍历一遍需要时间【13/号码数的平方】小时
+# 最后更新数据库数据，定期抽取数据编码上传
 def main():
     result = []
     for i in range(start - 1, 10000):
