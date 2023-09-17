@@ -61,7 +61,7 @@ def process_url(url, depth):
         if tag_url.endswith('.pdf'):
             continue
         # 过滤无效网页
-        parsed_url = urlparse(url)
+        parsed_url = urlparse(tag_url)
         if parsed_url.path[:11] == "/en/persons":
             continue
         new_urls.append((tag_url, depth + 1))
