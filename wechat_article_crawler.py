@@ -8,6 +8,37 @@ import json
 # 每次访问都随机选择一个号码（每个号码需要爬取至少【200/号码数】个页面），
 # 每个页面至少需要花费时间【120/号码数】秒，遍历一遍需要时间【13/号码数的平方】小时
 # 最后更新数据库数据，定期抽取数据编码上传
+
+import random
+
+class NumberPool:
+    def __init__(self, numbers):
+        self.numbers = numbers
+        self.last_call = None
+        
+    def validate(self):
+        valid_numbers = []
+        for number in self.numbers:
+            if self.is_valid(number):
+                valid_numbers.append(number)
+        print(f"{len(valid_numbers)} valid numbers")
+        self.numbers = valid_numbers
+        
+    def is_valid(self, number):
+        # Implement validation logic
+        return True 
+    
+    def count_numbers(self):
+        return len(self.numbers)
+    
+    def get_number(self):
+        if self.last_call and time.time() - self.last_call < 120/self.count_numbers():
+            print("Too soon to call again")
+            return None
+        
+        self.last_call = time.time()
+        return random.choice(self.numbers)
+
 def main():
     result = []
     for i in range(start - 1, 10000):
